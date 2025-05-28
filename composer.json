@@ -1,0 +1,15 @@
+{
+    "name": "vaghetti/biblioteca",
+    "description": "Nossa bibiotleca POO",
+    "autoload": {
+        "psr-4": {
+            "Vaghetti\\Biblioteca\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Sandro Vaghetti"
+        }
+    ],
+    "require": {}
+}
