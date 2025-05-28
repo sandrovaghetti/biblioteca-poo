@@ -5,16 +5,11 @@ namespace Vaghetti\Biblioteca;
 class Livro
 {
     //Propriedades Privadas do Livro
-    private string $titulo;
-    private string $autor;
     private bool $disponivel = false;
 
     //Construtor do Livro
-    public function __construct(string $autor, string $titulo)
-    {
-        $this->autor = $autor;
-        $this->titulo = $titulo;
-    }
+    public function __construct(private string $autor, private string $titulo) {}
+
     //Metodos de estado do Livro - Alteram o estado do livro
     public function marcarComoEmprestado()
     {

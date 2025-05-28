@@ -3,7 +3,7 @@
 require_once 'vendor/autoload.php';
 use Vaghetti\Biblioteca\Livro;
 
-echo("Sistema de Biblioteca Iniciado!");
+echo("Sistema de Biblioteca Iniciado!"."<br>");
 
 $livro = new Livro("Sandro Vaghetti", "PHP: The Right Way");
 echo'<pre>';
