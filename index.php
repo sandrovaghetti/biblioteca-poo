@@ -1,13 +1,14 @@
 <?php
 
 require_once 'vendor/autoload.php';
+
 use Vaghetti\Biblioteca\Livro;
 use Vaghetti\Biblioteca\Estante;
 use Vaghetti\Biblioteca\Aluno;
 use Vaghetti\Biblioteca\Professor;
-use Vaghetti\Biblioteca\Visitante;
+use Vaghetti\Biblioteca\Bibliotecario;
 
-echo("Sistema de Biblioteca Iniciado!"."<br>");
+echo ("Sistema de Biblioteca Iniciado!" . "<br>");
 
 $livro1 = new Livro("Sandro Vaghetti", "PHP: The Right Way");
 $livro2 = new Livro("George Orwell", "Animal Farm");
@@ -22,16 +23,13 @@ $estante->adicionarLivro($livro3);
 
 $livroencontrado = $estante->buscarLivroPorTitulo('PHP');
 
-$aluno = new Visitante('Julia Ucker');
-if ($aluno->podePegarEmprestado()) {
-    echo 'Pode pegar livros emprestados!';
-    $aluno->adcionarLivroEmprestado($livro1);
-} else {
-    echo 'Não pode pegar livros emprestados!';
-}
+$aluno = new Aluno('Julia Ucker');
+$aluno2 = new Aluno('Sandro Vaghetti');
 
-// $aluno->adcionarLivroEmprestado($livro2);
-// $aluno->adcionarLivroEmprestado($livro3);
+$bibliotecario = new Bibliotecario();  
 
-echo '<pre>';
-var_dump($aluno->podePegarEmprestado());
+$bibliotecario->emprestarLivro($aluno, $livro1, $estante);
+$bibliotecario->devolverLivro($aluno, $livro1, $estante);
+$bibliotecario->emprestarLivro($aluno, $livro1, $estante);
+
+
