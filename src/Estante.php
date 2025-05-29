@@ -26,6 +26,10 @@ class Estante
             }
         );
     }
+    public function verificarLivro(Livro $livro): bool
+    {
+        return in_array($livro, $this->livros);
+    }
 
     public function buscarLivroPorTitulo(string $titulo): ?Livro
     {
@@ -44,9 +48,8 @@ class Estante
 
     public function listarLivrosDisponiveis(): array
     {
-        return array_filter( $this->livros, function ($livroAtual) {
+        return array_filter($this->livros, function ($livroAtual) {
             return $livroAtual->estaDisponivel();
         });
     }
-    
 }

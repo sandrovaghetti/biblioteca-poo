@@ -30,6 +30,12 @@ abstract class Usuario
             function ($livroAtual) use ($livro) {}
         );
     }
+
+    public function getNome(): string
+    {
+        return $this->nome;
+    }
+    
     public function listarLivrosEmprestados(): array
     {
         return $this->livrosEmprestados;
